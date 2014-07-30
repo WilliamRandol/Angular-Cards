@@ -1,0 +1,524 @@
+.card {
+  width: 6em;
+  height: 9em;
+  position: relative;
+  border: .1em solid #eee;
+  margin: .2em;
+  padding: 0;
+  border-radius: .6em;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  display: inline-block;
+}
+
+.spade, .club, .joker.value-l {
+  color: #000;
+}
+.diamond, .heart, .joker.value-b {
+  color: #f00;
+}
+.four-color .diamond {
+  color: #00f;
+}
+.four-color .club {
+  color: #0f0;
+}
+
+.card > input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: block;
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.card input {
+    -webkit-transition: .25s linear; /* For Safari 3.1 to 6.0 */
+    transition: .25s linear;
+}
+.card input:focus, .card input:checked {
+  outline: 0;
+  border-radius: .6em;
+}
+.card input:hover {
+  border-radius: .6em;
+  -webkit-box-shadow: 0 .1em .3em 0 rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 .1em .3em 0 rgba(0, 0, 0, 0.75);
+  box-shadow: 0 .1em .3em 0 rgba(0, 0, 0, 0.75);
+}
+.card input:checked {
+  -webkit-box-shadow: 0 .3em .6em 0 rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 .3em .6em 0 rgba(0, 0, 0, 0.75);
+  box-shadow: 0 .3em .6em 0 rgba(0, 0, 0, 0.75);
+}
+
+.card:before, .card:after, .card input:before, .card input:after{
+  display: block;
+  position: absolute;
+}
+.card:before, .card:after{
+  top: .25em;
+  bottom: .25em;
+  left: .35em;
+  right: .35em;
+}
+
+.card *, .card *:before, .card *:after {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  line-height: inherit;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.card input:before, .card input:after{
+  top: 1.25em;
+  bottom: 1.25em;
+  left: .25em;
+  right: .25em;
+}
+
+.card:after,
+.card input:after,
+.card span:after {
+  transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg); 
+}
+
+.spade > input:before, .spade > input:after {
+  content: "\2660";
+}
+.club > input:before, .club > input:after {
+  content: "\2663";
+}
+.diamond > input:before, .diamond > input:after {
+  content: "\2666";
+}
+.heart > input:before, .heart > input:after {
+  content: "\2665";
+}
+
+.joker:before, .joker:after {
+  content: "\2605";
+}
+.value-01:before, .value-01:after {
+  content: "A";
+}
+.value-02:before, .value-02:after {
+  content: "2";
+}
+.value-03:before,.value-03:after {
+  content: "3";
+}
+.value-04:before,.value-04:after {
+  content: "4";
+}
+.value-05:before, .value-05:after {
+  content: "5";
+}
+.value-06:before,.value-06:after {
+  content: "6";
+}
+.value-07:before, .value-07:after {
+  content: "7";
+}
+.value-08:before, .value-08:after {
+  content: "8";
+}
+.value-09:before,.value-09:after {
+  content: "9";
+}
+.value-10:before, .value-10:after {
+  content: "10";
+}
+.value-11:before, .value-11:after {
+  content: "J";
+}
+.value-12:before, .value-12:after {
+  content: "Q";
+}
+.value-13:before, .value-13:after {
+  content: "K";
+}
+
+.card span {
+  position: absolute;
+  height: 10em;
+  width: 100%;
+  top: -1em;
+  left: 0;
+  text-align: center;
+}
+
+.value-01 span:before {
+  font-size: 4em;
+  line-height: 2.5em;
+  display: block;
+}
+
+.value-01.spade span:before {
+  content: "\2660";
+}
+.value-01.club span:before {
+  content: "\2663";
+}
+.value-01.diamond span:before {
+  content: "\2666";
+}
+.value-01.heart span:before {
+  content: "\2665";
+}
+
+.value-02 span:before,
+.value-02 span:after,
+.value-03 span:before,
+.value-03 span:after,
+.value-04 span:before,
+.value-04 span:after,
+.value-05 span:before,
+.value-05 span:after,
+.value-06 span:before,
+.value-06 span:after,
+.value-07 span:before,
+.value-07 span:after,
+.value-08 span:before,
+.value-08 span:after,
+.value-09 span:before,
+.value-09 span:after,
+.value-10 span:before,
+.value-10 span:after,
+.value-11 span:before,
+.value-11 span:after,
+.value-12 span:before,
+.value-12 span:after,
+.value-13 span:before,
+.value-13 span:after {
+  font-size: 2em;
+  line-height: 2.7em;
+  display: block;
+}
+
+.value-02.spade span:before, .value-02.spade span:after {
+  content: "\2660";
+}
+.value-02.club span:before, .value-02.club span:after {
+  content: "\2663";
+}
+.value-02.diamond span:before, .value-02.diamond span:after {
+  content: "\2666";
+}
+.value-02.heart span:before, .value-02.heart span:after {
+  content: "\2665";
+}
+
+.value-03 span:nth-of-type(2):before,
+.value-05 span:nth-of-type(2):before,
+.value-06 span:nth-of-type(2):before,
+.value-07 span:nth-of-type(2):before,
+.value-08 span:nth-of-type(2):before {
+  line-height: 5.2em;
+}
+
+.value-03.spade span:before, .value-03.spade span:after {
+  content: "\2660";
+}
+.value-03.club span:before, .value-03.club span:after {
+  content: "\2663";
+}
+.value-03.diamond span:before, .value-03.diamond span:after {
+  content: "\2666";
+}
+.value-03.heart span:before, .value-03.heart span:after {
+  content: "\2665";
+}
+
+.value-03 span:nth-of-type(2):after {
+  content: "";
+}
+
+.value-04.spade span:before,
+.value-04.spade span:after,
+.value-05.spade span:before,
+.value-05.spade span:after,
+.value-06.spade span:before,
+.value-06.spade span:after,
+.value-07.spade span:before,
+.value-07.spade span:after,
+.value-08.spade span:before,
+.value-08.spade span:after,
+.value-09.spade span:before,
+.value-09.spade span:after,
+.value-10.spade span:before,
+.value-10.spade span:after {
+  content: "\2660\2002\2660";
+}
+.value-04.club span:before,
+.value-04.club span:after,
+.value-05.club span:before,
+.value-05.club span:after,
+.value-06.club span:before,
+.value-06.club span:after,
+.value-07.club span:before,
+.value-07.club span:after,
+.value-08.club span:before,
+.value-08.club span:after,
+.value-09.club span:before,
+.value-09.club span:after,
+.value-10.club span:before,
+.value-10.club span:after {
+  content: "\2663\2002\2663";
+}
+.value-04.diamond span:before,
+.value-04.diamond span:after,
+.value-05.diamond span:before,
+.value-05.diamond span:after,
+.value-06.diamond span:before,
+.value-06.diamond span:after,
+.value-07.diamond span:before,
+.value-07.diamond span:after,
+.value-08.diamond span:before,
+.value-08.diamond span:after,
+.value-09.diamond span:before,
+.value-09.diamond span:after,
+.value-10.diamond span:before,
+.value-10.diamond span:after {
+  content: "\2666\2002\2666";
+}
+.value-04.heart span:before,
+.value-04.heart span:after,
+.value-05.heart span:before,
+.value-05.heart span:after,
+.value-06.heart span:before,
+.value-06.heart span:after,
+.value-07.heart span:before,
+.value-07.heart span:after,
+.value-08.heart span:before,
+.value-08.heart span:after,
+.value-09.heart span:before,
+.value-09.heart span:after,
+.value-10.heart span:before,
+.value-10.heart span:after {
+  content: "\2665\2002\2665";
+}
+
+.value-05.spade span:nth-of-type(2):before {
+  content: "\2660";
+}
+.value-05.club span:nth-of-type(2):before {
+  content: "\2663";
+}
+.value-05.diamond span:nth-of-type(2):before {
+  content: "\2666";
+}
+.value-05.heart span:nth-of-type(2):before {
+  content: "\2665";
+}
+
+.value-05 span:nth-of-type(2):after {
+  content: "";
+}
+
+.value-06 span:nth-of-type(2):after {
+  content: "";
+}
+
+.value-07 span:nth-of-type(3):before,
+.value-08 span:nth-of-type(3):before,
+.value-08 span:nth-of-type(3):after {
+  margin-top: 2em;
+  margin-bottom: -.5em;
+  line-height: 0em;
+}
+
+.value-07.spade span:nth-of-type(3):before {
+  content: "\2660";
+}
+.value-07.club span:nth-of-type(3):before {
+  content: "\2663";
+}
+.value-07.diamond span:nth-of-type(3):before {
+  content: "\2666";
+}
+.value-07.heart span:nth-of-type(3):before {
+  content: "\2665";
+}
+
+.value-07 span:nth-of-type(2):after,
+.value-07 span:nth-of-type(3):after {
+  content: "";
+}
+
+.value-08.spade span:nth-of-type(3):before, .value-08.spade span:nth-of-type(3):after {
+  content: "\2660";
+}
+.value-08.club span:nth-of-type(3):before, .value-08.club span:nth-of-type(3):after {
+  content: "\2663";
+}
+.value-08.diamond span:nth-of-type(3):before, .value-08.diamond span:nth-of-type(3):after {
+  content: "\2666";
+}
+.value-08.heart span:nth-of-type(3):before, .value-08.heart span:nth-of-type(3):after {
+  content: "\2665";
+}
+
+.value-08 span:nth-of-type(2):after  {
+  content: "";
+}
+
+.value-09 span:nth-of-type(2):before,
+.value-09 span:nth-of-type(2):after,
+.value-10 span:nth-of-type(2):before,
+.value-10 span:nth-of-type(2):after {
+  margin-top: 2.1em;
+  margin-bottom: -1em;
+  line-height: 0em;
+}
+.value-09 span:nth-of-type(3):after,
+.value-09 span:nth-of-type(3):before,
+.value-10 span:nth-of-type(3):after,
+.value-10 span:nth-of-type(3):before {
+  margin-top: .8em;
+  line-height: 1em;
+}
+
+.value-09 span:nth-of-type(3):before {
+  line-height: 3.5em;
+}
+
+.value-09.spade span:nth-of-type(3):before {
+  content: "\2660";
+}
+.value-09.club span:nth-of-type(3):before {
+  content: "\2663";
+}
+.value-09.diamond span:nth-of-type(3):before {
+  content: "\2666";
+}
+.value-09.heart span:nth-of-type(3):before {
+  content: "\2665";
+}
+
+.value-09 span:nth-of-type(3):after {
+  content: "";
+}
+
+.value-10 span:nth-of-type(3):before, .value-10 span:nth-of-type(3):after {
+  margin-top: 1.5em;
+  line-height: .45em;
+}
+
+.value-10.spade span:nth-of-type(3):before, .value-10.spade span:nth-of-type(3):after {
+  content: "\2660";
+}
+.value-10.club span:nth-of-type(3):before, .value-10.club span:nth-of-type(3):after {
+  content: "\2663";
+}
+.value-10.diamond span:nth-of-type(3):before, .value-10.diamond span:nth-of-type(3):after {
+  content: "\2666";
+}
+.value-10.heart span:nth-of-type(3):before, .value-10.heart span:nth-of-type(3):after {
+  content: "\2665";
+}
+
+.value-11 span:nth-of-type(1),
+.value-12 span:nth-of-type(1),
+.value-13 span:nth-of-type(1) {
+  border: 1px solid #ccc;
+  border-radius: .3em;
+  width: 4em;
+  height: 6.4em;
+  top: 1.3em;
+  left: 1em;
+}
+.value-11 span:nth-of-type(1):before,
+.value-11 span:nth-of-type(1):after,
+.value-12 span:nth-of-type(1):before,
+.value-12 span:nth-of-type(1):after,
+.value-13 span:nth-of-type(1):before,
+.value-13 span:nth-of-type(1):after {
+  text-align: left;
+  height: 100%;
+  width: 100%;
+  line-height: .65em;
+  position: absolute;
+}
+
+.value-11.spade span:nth-of-type(1):before,
+.value-11.spade span:nth-of-type(1):after,
+.value-12.spade span:nth-of-type(1):before,
+.value-12.spade span:nth-of-type(1):after,
+.value-13.spade span:nth-of-type(1):before,
+.value-13.spade span:nth-of-type(1):after {
+  content: "\2660";
+}
+.value-11.spade span:nth-of-type(1) {
+  background-image: url("facecards/spade-jack.svg");
+}
+.value-12.spade span:nth-of-type(1) {
+  background-image: url("facecards/spade-queen.svg");
+}
+.value-13.spade span:nth-of-type(1) {
+  background-image: url("facecards/spade-king.svg");
+}
+
+.value-11.club span:nth-of-type(1):before,
+.value-11.club span:nth-of-type(1):after,
+.value-12.club span:nth-of-type(1):before,
+.value-12.club span:nth-of-type(1):after,
+.value-13.club span:nth-of-type(1):before,
+.value-13.club span:nth-of-type(1):after {
+  content: "\2663";
+}
+.value-11.club span:nth-of-type(1) {
+  background-image: url("facecards/club-jack.svg");
+}
+.value-12.club span:nth-of-type(1) {
+  background-image: url("facecards/club-queen.svg");
+}
+.value-13.club span:nth-of-type(1) {
+  background-image: url("facecards/club-king.svg");
+}
+
+.value-11.diamond span:nth-of-type(1):before,
+.value-11.diamond span:nth-of-type(1):after,
+.value-12.diamond span:nth-of-type(1):before,
+.value-12.diamond span:nth-of-type(1):after,
+.value-13.diamond span:nth-of-type(1):before,
+.value-13.diamond span:nth-of-type(1):after {
+  content: "\2666";
+}
+.value-11.diamond span:nth-of-type(1) {
+  background-image: url("facecards/diamond-jack.svg");
+}
+.value-12.diamond span:nth-of-type(1) {
+  background-image: url("facecards/diamond-queen.svg");
+}
+.value-13.diamond span:nth-of-type(1) {
+  background-image: url("facecards/diamond-king.svg");
+}
+
+.value-11.heart span:nth-of-type(1):before,
+.value-11.heart span:nth-of-type(1):after,
+.value-12.heart span:nth-of-type(1):before,
+.value-12.heart span:nth-of-type(1):after,
+.value-13.heart span:nth-of-type(1):before,
+.value-13.heart span:nth-of-type(1):after {
+  content: "\2665";
+}
+.value-11.heart span:nth-of-type(1) {
+  background-image: url("facecards/heart-jack.svg");
+}
+.value-12.heart span:nth-of-type(1) {
+  background-image: url("facecards/heart-queen.svg");
+}
+.value-13.heart span:nth-of-type(1) {
+  background-image: url("facecards/heart-king.svg");
+}

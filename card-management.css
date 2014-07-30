@@ -1,0 +1,19 @@
+.card input {
+	-webkit-transition: .25s linear; /* For Safari 3.1 to 6.0 */
+	transition: .25s linear;
+}
+.card input:hover {
+	border-radius: .6em;
+	-webkit-box-shadow: 0 .1em .3em 0 rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0 .1em .3em 0 rgba(0, 0, 0, 0.75);
+	box-shadow: 0 .1em .3em 0 rgba(0, 0, 0, 0.75);
+}
+.card input:checked {
+	-webkit-box-shadow: 0 .3em .6em 0 rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0 .3em .6em 0 rgba(0, 0, 0, 0.75);
+	box-shadow: 0 .3em .6em 0 rgba(0, 0, 0, 0.75);
+}
+
+.deck .card {
+	
+}
