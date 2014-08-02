@@ -8,7 +8,7 @@ body: {
 .card {
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 	font-weight: bold;
-	font-size: 19.69px;
+	font-size: 15px;
 	display: inline-block;
 	position: relative;
 	margin: .2em;
@@ -37,7 +37,7 @@ body: {
 		radial-gradient(circle at 50%  100%, white 10%, silver 11%, silver 23%, white 24%, white 30%, silver 31%, silver 43%, white 44%, white 50%, silver 51%, silver 63%, white 64%, white 71%, transparent 71%, transparent),
 		radial-gradient(circle at 100% 50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent),
 		radial-gradient(circle at 0    50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent);
-	background-size: 25% 10%;
+	background-size: 25.1% 9.2%;
 	z-index: -1;
 	display: block;
 	transform: rotateY(-180deg);
@@ -66,19 +66,19 @@ body: {
 	color: #000;
 }
 .diamond, .heart, .joker.value-b {
-	color: #f00;
+	color: #900;
 }
 .four-color .diamond {
-	color: #00f;
+	color: #006;
 }
 .four-color .club {
-	color: #0f0;
+	color: #060;
 }
 
 .card input[type="checkbox"] {
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	border-radius: .6em;
+	border-radius: .5em;
 	position: absolute;
 	display: block;
 	height: 100%;
