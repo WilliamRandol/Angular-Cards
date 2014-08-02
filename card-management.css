@@ -1,19 +1,33 @@
-.card input {
-	-webkit-transition: .25s linear; /* For Safari 3.1 to 6.0 */
-	transition: .25s linear;
-}
-.card input:hover {
-	border-radius: .6em;
-	-webkit-box-shadow: 0 .1em .3em 0 rgba(0, 0, 0, 0.75);
-	-moz-box-shadow: 0 .1em .3em 0 rgba(0, 0, 0, 0.75);
-	box-shadow: 0 .1em .3em 0 rgba(0, 0, 0, 0.75);
-}
-.card input:checked {
-	-webkit-box-shadow: 0 .3em .6em 0 rgba(0, 0, 0, 0.75);
-	-moz-box-shadow: 0 .3em .6em 0 rgba(0, 0, 0, 0.75);
-	box-shadow: 0 .3em .6em 0 rgba(0, 0, 0, 0.75);
+.card, .card .face input, .card .back input {
+	transition: 1s;
+	cursor: pointer;
+	transform: translateZ(.5px);
+	transform-style: preserve-3d;
 }
 
-.deck .card {
-	
+.card {
+	transform: rotateY(-180deg);
+}
+.flipped {
+	transform: rotateY(0deg);
+}
+
+.card .back input {
+	box-shadow: 0 .1em .1em 0 rgba(0, 0, 0, 0.75);
+}
+.card .back input:hover {
+	box-shadow: 0 .2em .4em 0 rgba(0, 0, 0, 0.75);
+}
+.card .back input:checked {
+	box-shadow: 0 .3em .7em 0 rgba(0, 0, 0, 0.75);
+}
+
+.card .face input {
+	box-shadow: inset 0 0 2em 0 rgba(255, 255, 0, 0.25), 0 .1em .1em 0 rgba(0, 0, 0, 0.75);
+}
+.card .face input:hover {
+	box-shadow: inset 0 0 2em 0 rgba(255, 255, 0, 0.25), 0 .2em .4em 0 rgba(0, 0, 0, 0.75);
+}
+.card .face input:checked {
+	box-shadow: inset 0 0 2em 0 rgba(255, 255, 0, 0.25),0 .3em .7em 0 rgba(0, 0, 0, 0.75);
 }

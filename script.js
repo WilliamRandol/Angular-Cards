@@ -15,16 +15,22 @@ angular.module('app', [])
   .directive('card', function() {
     return {
       restrict: 'E',
-      replace: true,
-      template: '<label class="card" ng-style="id">' +
-                  '<input type="checkbox">' +
-                  '<span></span>' +
-                  '<span></span>' +
-                  '<span></span>' +
-                '</label>',
-      scope: {
+	  scope: {
+		card: '=',
         id: '@'
-      },
+	  },
+      replace: true,
+      template:	'<div class="card {{card}}" ng-class="{flipped: flipped}" ng-cloak>' +
+				'  <label class="face" ng-style="id">' +
+                '    <input ng-model="flipped" type="checkbox">' +
+                '    <span></span>' +
+                '    <span></span>' +
+                '    <span></span>' +
+                '  </label>' +
+				'  <div class="back">' +
+				'    <input ng-model="flipped" type="checkbox">' +
+				'  </div>' +
+				'</div>',
       link: function(scope, element, attrs) {
       }
     };

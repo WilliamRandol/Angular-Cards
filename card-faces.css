@@ -1,15 +1,67 @@
-.card {
-	width: 6em;
-	height: 9em;
-	position: relative;
-	border: .1em solid #eee;
-	margin: .2em;
-	padding: 0;
-	border-radius: .6em;
-	font-family: 'Yanone Kaffeesatz', sans-serif;
-	display: inline-block;
+body: {
+	z-index: -5;
+	position: absolute;
+	height: 100%;
+	width: 100%;
 }
 
+.card {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-weight: bold;
+	font-size: 19.69px;
+	display: inline-block;
+	position: relative;
+	margin: .2em;
+	height: 9em;
+	width: 6em;
+	padding: 0;
+	border-radius: .6em;
+}
+
+.card .face, .card .back{
+	height: 100%;
+	width: 100%;
+	backface-visibility: hidden;
+	border: .1em solid #eee;
+	border-radius: .6em;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.card .back {
+	background-color:silver;
+	background-image: 
+		radial-gradient(circle at 100% 150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
+		radial-gradient(circle at 0    150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
+		radial-gradient(circle at 50%  100%, white 10%, silver 11%, silver 23%, white 24%, white 30%, silver 31%, silver 43%, white 44%, white 50%, silver 51%, silver 63%, white 64%, white 71%, transparent 71%, transparent),
+		radial-gradient(circle at 100% 50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent),
+		radial-gradient(circle at 0    50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent);
+	background-size: 25% 10%;
+	z-index: -1;
+	display: block;
+	transform: rotateY(-180deg);
+}
+
+.card *, .card *:before, .card *:after {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	font: inherit;
+	color: inherit;
+	line-height: inherit;
+	box-sizing: border-box;
+}
+
+.card .face {
+	background-color: #fff;
+	position: absolute;
+	display: block;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	top: 0;
+}
 .spade, .club, .joker.value-l {
 	color: #000;
 }
@@ -23,54 +75,40 @@
 	color: #0f0;
 }
 
-.card > input[type="checkbox"] {
+.card input[type="checkbox"] {
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	display: block;
-	position: absolute;
-	margin: 0;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-}
-.card input:focus, .card input:checked {
-	outline: 0;
 	border-radius: .6em;
+	position: absolute;
+	display: block;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	left: 0;
+	top: 0;
 }
 
-.card:before, .card:after, .card input:before, .card input:after{
-	display: block;
+.card label:before, .card label:after, .card input:before, .card input:after{
 	position: absolute;
+	display: block;
 }
-.card:before, .card:after{
+.card label:before, .card label:after{
 	top: .25em;
-	bottom: .25em;
 	left: .35em;
 	right: .35em;
+	bottom: .25em;
 }
 
-.card *, .card *:before, .card *:after {
-	margin: 0;
-	padding: 0;
-	font: inherit;
-	color: inherit;
-	line-height: inherit;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-.card input:before, .card input:after{
+.card .face input:before, .card .face input:after{
 	top: 1.25em;
 	bottom: 1.25em;
 	left: .25em;
 	right: .25em;
 }
 
-.card:after,
-.card input:after,
-.card span:after {
+.card label:after,
+.card label input:after,
+.card label span:after {
 	transform: rotate(180deg);
 	-o-transform: rotate(180deg);
 	-ms-transform: rotate(180deg);
@@ -78,69 +116,68 @@
 	-webkit-transform: rotate(180deg); 
 }
 
-.spade > input:before, .spade > input:after {
-	content: "\2660";
-}
-.club > input:before, .club > input:after {
-	content: "\2663";
-}
-.diamond > input:before, .diamond > input:after {
-	content: "\2666";
-}
-.heart > input:before, .heart > input:after {
-	content: "\2665";
-}
-
-.joker:before, .joker:after {
-	content: "\2605";
-}
-.value-01:before, .value-01:after {
-	content: "A";
-}
-.value-02:before, .value-02:after {
-	content: "2";
-}
-.value-03:before,.value-03:after {
-	content: "3";
-}
-.value-04:before,.value-04:after {
-	content: "4";
-}
-.value-05:before, .value-05:after {
-	content: "5";
-}
-.value-06:before,.value-06:after {
-	content: "6";
-}
-.value-07:before, .value-07:after {
-	content: "7";
-}
-.value-08:before, .value-08:after {
-	content: "8";
-}
-.value-09:before,.value-09:after {
-	content: "9";
-}
-.value-10:before, .value-10:after {
-	content: "10";
-}
-.value-11:before, .value-11:after {
-	content: "J";
-}
-.value-12:before, .value-12:after {
-	content: "Q";
-}
-.value-13:before, .value-13:after {
-	content: "K";
-}
-
 .card span {
 	position: absolute;
-	height: 10em;
+	text-align: center;
+	height: 100%;
 	width: 100%;
 	top: -1em;
 	left: 0;
-	text-align: center;
+}
+
+.spade .face input:before, .spade .face input:after {
+	content: "\2660";
+}
+.club .face input:before, .club .face input:after {
+	content: "\2663";
+}
+.diamond .face input:before, .diamond .face input:after {
+	content: "\2666";
+}
+.heart .face input:before, .heart .face input:after {
+	content: "\2665";
+}
+.joker label:before, .joker label:after {
+	content: "\2605";
+}
+.value-01 label:before, .value-01 label:after {
+	content: "A";
+}
+.value-02 label:before, .value-02 label:after {
+	content: "2";
+}
+.value-03 label:before,.value-03 label:after {
+	content: "3";
+}
+.value-04 label:before,.value-04 label:after {
+	content: "4";
+}
+.value-05 label:before, .value-05 label:after {
+	content: "5";
+}
+.value-06 label:before,.value-06 label:after {
+	content: "6";
+}
+.value-07 label:before, .value-07 label:after {
+	content: "7";
+}
+.value-08 label:before, .value-08 label:after {
+	content: "8";
+}
+.value-09 label:before,.value-09 label:after {
+	content: "9";
+}
+.value-10 label:before, .value-10 label:after {
+	content: "10";
+}
+.value-11 label:before, .value-11 label:after {
+	content: "J";
+}
+.value-12 label:before, .value-12 label:after {
+	content: "Q";
+}
+.value-13 label:before, .value-13 label:after {
+	content: "K";
 }
 
 .value-01 span:before {
@@ -187,7 +224,7 @@
 .value-13 span:before,
 .value-13 span:after {
 	font-size: 2em;
-	line-height: 2.7em;
+	line-height: 2.75em;
 	display: block;
 }
 
@@ -209,7 +246,7 @@
 .value-06 span:nth-of-type(2):before,
 .value-07 span:nth-of-type(2):before,
 .value-08 span:nth-of-type(2):before {
-	line-height: 5.2em;
+	line-height: 5.25em;
 }
 
 .value-03.spade span:before, .value-03.spade span:after {
@@ -362,20 +399,20 @@
 .value-09 span:nth-of-type(2):after,
 .value-10 span:nth-of-type(2):before,
 .value-10 span:nth-of-type(2):after {
-	margin-top: 2.1em;
-	margin-bottom: -1em;
-	line-height: 0em;
+	margin-top: 2.15em;
+	margin-bottom: -1.05em;
+	line-height: 0.05em;
 }
 .value-09 span:nth-of-type(3):after,
 .value-09 span:nth-of-type(3):before,
 .value-10 span:nth-of-type(3):after,
 .value-10 span:nth-of-type(3):before {
-	margin-top: .8em;
+	margin-top: .85em;
 	line-height: 1em;
 }
 
 .value-09 span:nth-of-type(3):before {
-	line-height: 3.5em;
+	line-height: 3.7em;
 }
 
 .value-09.spade span:nth-of-type(3):before {
@@ -397,7 +434,7 @@
 
 .value-10 span:nth-of-type(3):before, .value-10 span:nth-of-type(3):after {
 	margin-top: 1.5em;
-	line-height: .45em;
+	line-height: .455em;
 }
 
 .value-10.spade span:nth-of-type(3):before, .value-10.spade span:nth-of-type(3):after {

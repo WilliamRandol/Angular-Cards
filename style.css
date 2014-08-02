@@ -59,7 +59,7 @@
   position: absolute;
 }
 .card:before, .card:after{
-  top: .25em;
+  top: .26em;
   bottom: .25em;
   left: .35em;
   right: .35em;
@@ -202,7 +202,7 @@
 .value-13 span:before,
 .value-13 span:after {
   font-size: 2em;
-  line-height: 2.7em;
+  line-height: 2.75em;
   display: block;
 }
 
