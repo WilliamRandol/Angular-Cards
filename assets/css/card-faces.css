@@ -9,49 +9,45 @@ card {
 	width: 6em;
 	padding: 0;
 }
-
-card *, card *:before, card *:after {
+card *,
+card *:before,
+card *:after {
 	position: absolute;
 	display: block;
 	height: 100%;
 	width: 100%;
 	box-sizing: border-box;
 }
-
-.face, .back{
+.face,
+.back {
 	backface-visibility: hidden;
 	border-radius: .6em;
 }
-
 .face {
 	border: .1em solid rgba(255, 255, 0, 0.25);
 	background-color: #fff;
 	z-index: 1;
 }
-
-
-.face:before, .face:after{
+.face:before,
+.face:after {
 	padding: .25em;
 }
-
 .back {
-	background-color:silver;
+	background-color: silver;
 	background-size: 25.1% 9.2%;
-	background-image: 
-		radial-gradient(circle at 100% 150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
-		radial-gradient(circle at 0 150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
-		radial-gradient(circle at 50% 100%, white 10%, silver 11%, silver 23%, white 24%, white 30%, silver 31%, silver 43%, white 44%, white 50%, silver 51%, silver 63%, white 64%, white 71%, transparent 71%, transparent),
-		radial-gradient(circle at 100% 50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent),
-		radial-gradient(circle at 0 50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent);
+	background-image: radial-gradient(circle at 100% 150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent), radial-gradient(circle at 0 150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent), radial-gradient(circle at 50% 100%, white 10%, silver 11%, silver 23%, white 24%, white 30%, silver 31%, silver 43%, white 44%, white 50%, silver 51%, silver 63%, white 64%, white 71%, transparent 71%, transparent), radial-gradient(circle at 100% 50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent), radial-gradient(circle at 0 50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent);
 	border: .2em solid rgba(225, 225, 225, 1);
 	transform: rotateY(-180deg);
 	z-index: -1;
 }
-
-.spade, .club, .joker.value-l {
+.spade,
+.club,
+.joker.value-l {
 	color: #000;
 }
-.diamond, .heart, .joker.value-b {
+.diamond,
+.heart,
+.joker.value-b {
 	color: #900;
 }
 .fourColor .diamond {
@@ -60,86 +56,99 @@ card *, card *:before, card *:after {
 .fourColor .club {
 	color: #060;
 }
-
 card *:after {
 	transform: rotate(180deg);
 	-o-transform: rotate(180deg);
 	-ms-transform: rotate(180deg);
 	-moz-transform: rotate(180deg);
-	-webkit-transform: rotate(180deg); 
+	-webkit-transform: rotate(180deg);
 }
-
 card span {
 	text-align: center;
 }
-
-card span:before, card span:after {
+card span:before,
+card span:after {
 	font-size: 2em;
 	line-height: 2.75em;
 }
-
-.spade span:before, .spade span:after {
+.spade span:before,
+.spade span:after {
 	content: "\2660";
 }
-.club span:before, .club span:after {
+.club span:before,
+.club span:after {
 	content: "\2663";
 }
-.diamond span:before, .diamond span:after {
+.diamond span:before,
+.diamond span:after {
 	content: "\2666";
 }
-.heart span:before, .heart span:after {
+.heart span:before,
+.heart span:after {
 	content: "\2665";
 }
-
-.joker .face:before, .joker .face:after {
+.joker .face:before,
+.joker .face:after {
 	content: "\2605";
 }
-.value-01 .face:before, .value-01 .face:after {
+.value-01 .face:before,
+.value-01 .face:after {
 	content: "A";
 }
-.value-02 .face:before, .value-02 .face:after {
+.value-02 .face:before,
+.value-02 .face:after {
 	content: "2";
 }
-.value-03 .face:before, .value-03 .face:after {
+.value-03 .face:before,
+.value-03 .face:after {
 	content: "3";
 }
-.value-04 .face:before, .value-04 .face:after {
+.value-04 .face:before,
+.value-04 .face:after {
 	content: "4";
 }
-.value-05 .face:before, .value-05 .face:after {
+.value-05 .face:before,
+.value-05 .face:after {
 	content: "5";
 }
-.value-06 .face:before, .value-06 .face:after {
+.value-06 .face:before,
+.value-06 .face:after {
 	content: "6";
 }
-.value-07 .face:before, .value-07 .face:after {
+.value-07 .face:before,
+.value-07 .face:after {
 	content: "7";
 }
-.value-08 .face:before, .value-08 .face:after {
+.value-08 .face:before,
+.value-08 .face:after {
 	content: "8";
 }
-.value-09 .face:before, .value-09 .face:after {
+.value-09 .face:before,
+.value-09 .face:after {
 	content: "9";
 }
-.value-10 .face:before, .value-10 .face:after {
+.value-10 .face:before,
+.value-10 .face:after {
 	content: "10";
 }
-.value-11 .face:before, .value-11 .face:after {
+.value-11 .face:before,
+.value-11 .face:after {
 	content: "J";
 }
-.value-12 .face:before, .value-12 .face:after {
+.value-12 .face:before,
+.value-12 .face:after {
 	content: "Q";
 }
-.value-13 .face:before, .value-13 .face:after {
+.value-13 .face:before,
+.value-13 .face:after {
 	content: "K";
 }
-
-.suit-c:before, .suit-c:after{
+.suit-c:before,
+.suit-c:after {
 	text-align: left;
 	font-size: 1em;
 	padding: .3em .2em;
 }
-
 .value-04.spade .suit-0:before,
 .value-04.spade .suit-0:after,
 .value-05.spade .suit-0:before,
@@ -232,7 +241,6 @@ card span:before, card span:after {
 .value-10.heart .suit-1:after {
 	content: "\2665\2002\2665";
 }
-
 .value-01 .suit-0:after,
 .value-01 .suit-1,
 .value-01 .suit-2,
@@ -258,37 +266,33 @@ card span:before, card span:after {
 .value-13 .suit-2 {
 	display: none;
 }
-
-.suit-0:before, .suit-0:after {
+.suit-0:before,
+.suit-0:after {
 	height: 5.5em;
 	margin-top: -.5em;
 }
-
 .value-01 .suit-0:before {
 	font-size: 4em;
 	line-height: 3em;
 }
-
-.suit-1:before, .suit-1:after {
+.suit-1:before,
+.suit-1:after {
 	margin-top: .75em;
 }
-
- .suit-2:before, .suit-2:after {
+.suit-2:before,
+.suit-2:after {
 	height: 4.25em;
 	margin-top: .1em;
 }
-
 .value-09 .suit-2:before {
 	height: 0;
 	margin-top: .75em;
 }
-
 .value-10 .suit-2:before,
 .value-10 .suit-2:after {
 	height: 4.5em;
 	margin-top: -.025em
 }
-
 .value-09 .suit-1:before,
 .value-09 .suit-1:after,
 .value-10 .suit-1:before,
@@ -296,7 +300,6 @@ card span:before, card span:after {
 	height: 3.8em;
 	margin-top: .35em;
 }
-
 .value-11 .suit-0,
 .value-12 .suit-0,
 .value-13 .suit-0 {
@@ -317,7 +320,6 @@ card span:before, card span:after {
 	height: 5.3em;
 	margin-top: -1.1em;
 }
-
 .value-11.spade .suit-0 {
 	background-image: url("../img/facecards/spade-jack.svg");
 }
@@ -327,7 +329,6 @@ card span:before, card span:after {
 .value-13.spade .suit-0 {
 	background-image: url("../img/facecards/spade-king.svg");
 }
-
 .value-11.club .suit-0 {
 	background-image: url("../img/facecards/club-jack.svg");
 }
@@ -337,7 +338,6 @@ card span:before, card span:after {
 .value-13.club .suit-0 {
 	background-image: url("../img/facecards/club-king.svg");
 }
-
 .value-11.diamond .suit-0 {
 	background-image: url("../img/facecards/diamond-jack.svg");
 }
@@ -347,7 +347,6 @@ card span:before, card span:after {
 .value-13.diamond .suit-0 {
 	background-image: url("../img/facecards/diamond-king.svg");
 }
-
 .value-11.heart .suit-0 {
 	background-image: url("../img/facecards/heart-jack.svg");
 }

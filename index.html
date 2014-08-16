@@ -1,13 +1,13 @@
 <!doctype html>
 <html ng-app="cards">
 
-  <head>
-    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="assets/css/card-faces.css" />
-    <link rel="stylesheet" href="assets/css/card-management.css" />
-  </head>
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="assets/css/card-faces.css" />
+	<link rel="stylesheet" href="assets/css/card-management.css" />
+</head>
 
-  <body ng-controller="cardsCtrl">
+<body ng-controller="cardsCtrl">
 	<div style="height:60px">
 		<label>
 			<input type="checkbox" ng-model="classes.fourColor" name="classes" value="fourColor">Four Color
@@ -22,9 +22,9 @@
 	<div ng-class="classes">
 		<card ng-repeat="(key, card) in fullDeck track by key" card="card" ng-class="card" ng-click="toggleSelected(card)"></card>
 	</div>
-    <script src="http://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/sugar/1.4.1/sugar.min.js"></script>
-    <script src="assets/js/cards.js"></script>
-  </body>
+	<script src="http://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/sugar/1.4.1/sugar.min.js"></script>
+	<script src="assets/js/cards.js"></script>
+</body>
 
 </html>
