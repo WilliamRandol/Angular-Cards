@@ -1,0 +1,77 @@
+* {
+	transition: .5s;
+}
+
+card{
+	cursor: pointer;
+}
+
+card {
+	transform: rotateY(-180deg) rotateZ(0deg) translateY(0em);
+	transform-style: preserve-3d;
+}
+
+card .back area, card .face .suit-c {
+	transform: translateZ(1px);
+}
+
+.selected {
+	transform: rotateY(0deg) rotateZ(0deg) translateY(0em);
+}
+
+.back {
+	box-shadow: 0 .1em .1em 0 rgba(0, 0, 0, 0.75);
+}
+.back:hover {
+	box-shadow: 0 .2em .4em 0 rgba(0, 0, 0, 0.75);
+}
+.selected .back {
+	box-shadow: 0 .3em .7em 0 rgba(0, 0, 0, 0.75);
+}
+
+.face {
+	box-shadow: inset 0 0 2em 0 rgba(255, 255, 0, 0.15), 0 .1em .1em 0 rgba(0, 0, 0, 0.75);
+}
+.face:hover {
+	box-shadow: inset 0 0 2em 0 rgba(255, 255, 0, 0.15), 0 .2em .4em 0 rgba(0, 0, 0, 0.75);
+}
+.selected .face {
+	box-shadow: inset 0 0 2em 0 rgba(255, 255, 0, 0.15), 0 .3em .7em 0 rgba(0, 0, 0, 0.75);
+}
+.faceUp .selected .face {
+	box-shadow: inset 0 0 2em 0 rgba(0, 0, 255, 0.15), 0 .3em .7em 0 rgba(0, 0, 0, 0.75);;
+	border-color: rgba(0, 0, 255, 0.15);
+}
+
+.stack card {
+	margin-left: -5em;
+}
+.stack card:first-of-type {
+	margin-left: 0;
+}
+
+.stack card{
+	transform: rotateY(-180deg) rotateZ(0deg) translateY(0em);
+}
+.stack .selected {
+	transform: rotateY(0deg) rotateZ(-5deg) translateY(-.25em);
+}
+
+.faceUp card{
+	transform: rotateY(0deg) rotateZ(0deg) translateY(0em);
+}
+
+.faceUp .selected {
+	transform: rotateY(360deg) rotateZ(0deg) translateY(0em);
+}
+
+.faceUp.stack card {
+	transform: rotateY(0deg) rotateZ(0deg) translateY(0em);
+}
+.faceUp.stack .selected {
+	transform: rotateY(360deg) rotateZ(-5deg) translateY(-.25em);
+}
+.faceUp.stack .selected .face {
+	box-shadow: inset 0 0 2em 0 rgba(0, 0, 255, 0.15), 0 .3em .4em 0 rgba(0, 0, 0, .75);
+	border-color: rgba(0, 0, 255, 0.15);
+}

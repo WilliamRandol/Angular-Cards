@@ -1,17 +1,30 @@
 <!doctype html>
-<html ng-app="app">
+<html ng-app="cards">
 
   <head>
     <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="card-faces.css" />
-    <link rel="stylesheet" href="card-management.css" />
+    <link rel="stylesheet" href="assets/css/card-faces.css" />
+    <link rel="stylesheet" href="assets/css/card-management.css" />
   </head>
 
-  <body ng-controller="ctrl" class="four-color">
-    <card ng-repeat="card in fullDeck" card="card"></card>
-    <script data-require="angular.js@*" data-semver="1.3.0-beta.5" src="http://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
-    <script data-require="sugar@*" data-semver="1.3.8" src="http://cdnjs.cloudflare.com/ajax/libs/sugar/1.3.8/sugar.min.js"></script>
-    <script src="script.js"></script>
+  <body ng-controller="cardsCtrl">
+	<div style="height:60px">
+		<label>
+			<input type="checkbox" ng-model="classes.fourColor" name="classes" value="fourColor">Four Color
+		</label>
+		<label>
+			<input type="checkbox" ng-model="classes.stack" name="classes" value="stack">Stack
+		</label>
+		<label>
+			<input type="checkbox" ng-model="classes.faceUp" name="classes" value="faceUp" checked>Face Up
+		</label>
+	</div>
+	<div ng-class="classes">
+		<card ng-repeat="(key, card) in fullDeck track by key" card="card" ng-class="card" ng-click="toggleSelected(card)"></card>
+	</div>
+    <script src="http://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/sugar/1.4.1/sugar.min.js"></script>
+    <script src="assets/js/cards.js"></script>
   </body>
 
 </html>
